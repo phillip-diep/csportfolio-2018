@@ -75,6 +75,8 @@
             padding: 1em;
             border: none;
             width: 100%;
+            transition: background 1s;
+            cursor: pointer;
         }
 
         button:hover {
@@ -94,13 +96,26 @@
             transition: background 1s;
             cursor: pointer;
         }
-        
+
         .accordion:hover {
             background: rgb(180, 180, 180);
         }
 
+        .accordion:after {
+            content: '\002B';
+            font-style: normal;
+            color: black;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2212";
+        }
+
         .accordionText {
-            background: rgb(150, 150, 150);
+            background: rgb(170, 170, 170);
             padding: 0 .5em;
             max-height: 0px;
             overflow: hidden;
@@ -170,8 +185,21 @@
             looked at to find what range it fits in, and then the output value for that range is displayed.</p>
     </div>
 
+    <div style="background: white; height: 500px; width: 100%; margin-top: 10px; overflow:scroll;" id="example">
+        <div style="display:flex;">
+            <button id="innerHTML"> change .innerHTML </button>
+            <button id="style"> change .style </button>
+        </div>
+        <div id="text" style="color: black; margin-left: 10px; margin-right: 10px;">
+            <h3> This is an example of how innerHTML and style work.</h3>
+            <p> The buttons above have .addEventListener added to them to change the text in this box. </p>
+            <p> The elements in this box have also been grabbed by using .getElementById. </p>
+        </div>
+        <button style="margin-top: 178px" id="reset"> Reset </button>
+    </div>
 
     <h3> What choices did you have to make and how did you go about making them? </h3>
+    <p> Some choices I had to make was to create what inputs and outputs there would be. For my website, I had the idea to create a guide for how long to cook meat. This .</p>
 
     <h3> How has this project changed your connection and understanding of what it means to interact with something? </h3>
 
@@ -179,13 +207,12 @@
 
     <script type="text/javascript">
         var accordion = document.getElementsByClassName("accordion");
-        var accordionText = document.getElementsByClassName("accordionText")
+        var accordionText = document.getElementsByClassName("accordionText");
         var example = document.getElementById("example");
         var innerHTML = document.getElementById("innerHTML");
         var style = document.getElementById("style");
         var text = document.getElementById("text");
         var reset = document.getElementById("reset");
-
         var i;
 
         for (i = 0; i < accordion.length; i++) {
@@ -198,12 +225,12 @@
                 else {
                     accordionText.style.maxHeight = accordionText.scrollHeight + "px";
                 }
-            })
+            });
         }
 
         innerHTML.addEventListener("click", function() {
             text.innerHTML = "<h3> The innerHTML has now been changed. </h3>";
-            reset.style.marginTop = "244px"
+            reset.style.marginTop = "244px";
         });
 
         style.addEventListener("click", function() {
@@ -216,7 +243,7 @@
             text.innerHTML = "<h3> This is an example of how innerHTML and style work.</h3> <p> The buttons above have .addEventListener added to them to change the text in this box. </p> <p> The elements in this box have also been grabbed by using .getElementById. </p>";
             text.style.color = "black";
             example.style.background = "white";
-            reset.style.marginTop = "178px"
+            reset.style.marginTop = "178px";
         });
     </script>
 </body>
