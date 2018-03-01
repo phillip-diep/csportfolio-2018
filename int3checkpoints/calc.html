@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <style>
+        body{
+            background-color: lightgrey;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button{
+            border: none;
+            padding: 3px;
+            font-size: 6vw;
+        }
+        input{
+            border: white;
+            font-size: 5vw;
+            padding-right: 10px;
+            overflow: auto;
+            text-align: right;
+            width: 70vw
+
+        }
+        select{
+            border: none;
+            font-size: 3vw;
+            height: 6vw;
+        }
+    </style>
+</head>
+<body>
+    <h1 style = "font-size: 10vw; margin: 0;"> Calculator: </h1>
+    <div style = "display: flex; background: white">
+    <div style = "display: flex, flex-direction: column; width: 70vw; height: 13vw;">
+    <input type="text" style= "border-bottom: black dashed 1px" id="num1"/>
+    <input type="text" id="num2"/>
+    </div>
+    <div style = "display: flex; flex-direction: column; width: 30vw;">
+    <select id = "operator">
+        <option> + </option>
+        <option> - </option>
+        <option> * </option>
+        <option> / </option>
+        <option> ^ </option>
+        <option> square root (top #) </option>
+        <option> cubic root (top #) </option>
+        <option> distance </option>
+    </select>
+    <button id = "calculate"> Calculate </button>
+    </div>
+    </div>
+    <div style = "font-size: 10vw; text-align: right;" id = "answer"> answer </div>
+    <script type="text/javascript" src="calc.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+#navbar{
+    margin: 0px;
+    background-color: black;
+}
+#navbar li {
+    margin: 0px;
+    display:inline-block;
+    background-color: black;
+    padding: 10px;
+    width: auto;
+    height: auto;
+}

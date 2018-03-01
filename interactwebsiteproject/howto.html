@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>How To</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid Serif">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+    <style type="text/css">
+        body {
+            background: black;
+            color: white;
+            cursor: default;
+
+        }
+
+        h1 {
+            font-family: "Oswald";
+            font-weight: bolder;
+            font-size: 30vw;
+            text-transform: uppercase;
+            line-height: 30vw;
+            margin: 0;
+        }
+
+        h2 {
+            font-family: "Droid Serif";
+            font-weight: 400;
+            font-style: italic;
+            font-size: 10vw;
+            line-height: 10vw;
+            text-transform: capitalize;
+            text-align: center;
+            margin: 5vw 0 0 0;
+        }
+
+        h3 {
+            font-family: "Oswald";
+            font-weight: 100;
+            font-size: 4em;
+            line-height: 1em;
+            margin-bottom: 20px;
+        }
+
+        h4 {
+            font-family: "Droid Serif";
+            font-weight: 400;
+            font-style: italic;
+            font-size: 3em;
+            text-transform: capitalize;
+            margin: 0;
+            margin-top: 1em;
+        }
+
+        p {
+            font-family: "Open Sans";
+            font-style: italic;
+            font-size: 1.5em;
+            margin: 0;
+        }
+
+        pre {
+            font-size: 1.5em;
+        }
+
+        button {
+            font-family: "Open Sans";
+            font-size: 1em;
+            padding: 1em;
+            border: none;
+            width: 100%;
+        }
+
+        button:hover {
+            background: rgb(200, 200, 200);
+        }
+    </style>
+</head>
+
+<body>
+    <h1> How To: </h1>
+    <h2> Interactive Website </h2>
+
+    <h3> What did I create? </h3>
+    <p> I created a website that uses user input to determine the best times to cook each side of a steak for. The inputs are the thickness of the steak and the level of cooking they wanted.</p>
+
+    <h3> How does the project work overall? </h3>
+    <p> The project works by using the DOM to manipulate how the website appeared. Elements would be stored in JavaScript using .getElementById. They would then have their properties changed in many ways: css styling could be changed using .style, html itself
+        could be changed using .innerHTML. The code also used .addEventListener to many buttons. This command would run functions when a certain event happened to the assigned object. I also used a if / else if statement to create input/output system.
+        </p>
+
+    <h3> What are some specifics of the code and how do those work? </h3>
+    <h4> .getElementById </h4>
+    <p> In the code, .getElementById was used heavily. An example of it is the line: </p>
+    <pre class="code"> <code>
+    var input = document.getElementById("input");
+    </code> </pre>
+    <p> This line of code works by first creating a variable in JS, and then assinging it to the .getElementById. The .getElementById is writen always as document.getElementById("name"). It looks for anything with the same id as what is in the quotation marks
+        and calls it to the JS code.</p>
+
+    <h4> .style </h4>
+    <p> In the code, .style was used to change the styles of many elements. An example of it is in the lines: </p>
+    <pre class="code"> <code>
+    opening.style.opacity = "0";
+    input.style.display = "flex";
+    error.style.display = "block";
+    </code> </pre>
+    <p> In these lines of code, there are many .style codes being used. In the first line, .style is paired with .opacity because that is what we are changing. When using .style, the specific css property being changed follows as .NAME. The first line will
+        change the opacity of "opening" to 0, change the display of "input" to flex, and change the display of "error" to block. These .style changes, with other ones, are how I got my different slides to tranistion from one to the other smoothly.</p>
+
+    <h4> .innerHTML </h4>
+    <p> In the code, .innerHTML was used to change to html of the results. An example of it is in the lines: </p>
+    <pre class="code"> <code>
+    side1.innerHTML = &#8220;&lt;h4&gt; 5 minutes &lt/h4&gt;&#8221;
+    side2.innerHTML = &#8220;&lt;h4&gt; 3 minutes &lt;/h4&gt;&#8221;
+    </code> </pre>
+    <p> These 2 pieces of code are one result for the output. There are 2 innerHTMLs being changed: side1 and side2. There two variables are div elements, so when the innerHTML is changed, the results will be displayed in the divs in a &lt;h4&gt; style. </p>
+
+    <h4> .addEventListener</h4>
+    <p> In the website, there are many buttons that have many functions. To have them cause events to happen, .addEventListener has to be used. An example of it is in the lines: </p>
+    <pre class="code"> <code>
+    exitAlert.addEventListener("click", function() {
+    error.style.top = "-37vw";
+    });
+    </code> </pre>
+    <p> This piece of code is a complete .addEventListener. There is a variable which the eventListener will be added to (exit.alert), a event that is being listened for ("click"), and a fucntion that is run when the event happens. </p>
+
+    <h4> If / Else If: </h4>
+    <p> In the website, the output is determined using a system of if / else if statements. </p>
+
+    <h4> Example: </h4>
+    <div style="background: white; height: 500px; width: 100%; margin-top: 10px; overflow:scroll;" id="example">
+        <div style="display:flex;">
+            <button id="innerHTML"> change .innerHTML </button>
+            <button id="style"> change .style </button>
+        </div>
+        <div id="text" style="color: black; margin-left: 10px; margin-right: 10px;">
+            <h3> This is an example of how innerHTML and style work.</h3>
+            <p> The buttons above have .addEventListener added to them to change the text in this box. </p>
+            <p> The elements in this box have also been grabbed by using .getElementById. </p>
+        </div>
+        <button style="margin-top: 178px" id="reset"> Reset </button>
+    </div>
+
+    <h3> What choices did you have to make and how did you go about making them? </h3>
+
+
+    <h3> How has this project changed your connection and understanding of what it means to interact with something? </h3>
+
+    <h3> What is one thing you would change if you had more time? </h3>
+
+    <script type="text/javascript">
+        var example = document.getElementById("example");
+        var innerHTML = document.getElementById("innerHTML");
+        var style = document.getElementById("style");
+        var text = document.getElementById("text");
+        var reset = document.getElementById("reset");
+
+        innerHTML.addEventListener("click", function() {
+            text.innerHTML = "<h3> The innerHTML has now been changed. </h3>";
+            reset.style.marginTop = "244px"
+        });
+
+        style.addEventListener("click", function() {
+            example.style.background = "darkgray";
+            text.style.color = "white";
+
+        });
+
+        reset.addEventListener("click", function() {
+            text.innerHTML = "<h3> This is an example of how innerHTML and style work.</h3> <p> The buttons above have .addEventListener added to them to change the text in this box. </p> <p> The elements in this box have also been grabbed by using .getElementById. </p>";
+            text.style.color = "black";
+            example.style.background = "white";
+            reset.style.marginTop = "178px"
+        });
+    </script>
+</body>
+
+</html>
+<pre class="code"> <code>
+        
+    </code> </pre>

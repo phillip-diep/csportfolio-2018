@@ -1,0 +1,173 @@
+<html>
+
+<head>
+  <script src="processing.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Satisfy">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Slab">
+</head>
+<style type="text/css">
+  body {
+    background-image: url(https://docs.google.com/drawings/d/e/2PACX-1vQIJ2jyODrjzwDIq-e47_WcuFb9T8jMEMvvCee6_8wGVRUeeZs9-2Qfzm7CB6aKl7oGB_jkDumuebBh/pub?w=1440&h=810);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: "Lato";
+  }
+  
+  p{
+    margin: 10px;
+    font-size: 20px;
+  }
+  
+  h1{
+      font-family: "Roboto Slab";
+      font-size: 150;
+      margin: 0px;
+      text-align: center;
+      letter-spacing: 50px;
+      text-shadow: -5px 5px 10px grey;
+
+      }
+  
+  h2{
+    font-family: "Satisfy";
+    font-size: 125;
+    text-decoration: underline;
+    text-shadow: -5px 5px 5px #dbd146;
+    color: yellow;
+    margin-top: 50px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+  }
+  
+  h3{
+    font-family: "Roboto Slab";
+    font-size: 35;
+    letter-spacing: 5px;
+    margin-top: 25px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;  
+    text-shadow: -1px 1px 5px grey;
+
+  }
+  
+  .code {
+    background-color: white;
+    width: 450px;
+    margin: auto;
+    box-shadow: -5px 5px 10px #00cbfc;
+  }
+  
+  img {
+    display: block;
+    border: 25px solid white;
+    width: 400px;
+    margin: auto;
+    box-shadow: -5px 5px 10px #00cbfc;  
+  }
+</style>
+<body><canvas id="output-canvas"></canvas>
+  <script src="art.js"></script>
+  <h1> How to: </h1>
+  <h2 style="top-margin: 0px;"> Balloons: </h2>
+  <p> For the balloons, I first had to draw one balloon. I used a ellipse, a triangle, an arc, and a bezier to create the balloon. </p>
+  <img src="https://docs.google.com/drawings/d/e/2PACX-1vR4nbqUL7Pw3g35AeLyzFLOU249sgaQC0xDYeJiVBUAD8jJ5_9MD7Zf_M4r50ir05YlDDU1q_nmZKJ3/pub?w=400&h=400"> </img>
+  <p> After creating one balloon, I made the balloon into a function, so that I could use many of them. The function looked like this: </p>
+  <p>
+    <pre class="code"><code>
+  function Balloon(xpos, ypos, r, g, b) 
+  </code></pre>
+  </p>
+  <p> This function creates a balloon, but it also has the x position, the y position, and the value for rgb (color) as parameters. This allows the balloon to be customized. </p>
+
+  <h3> Balloon Animation: </h3>
+  <p> After creating the Balloon function, it needed to be used to create an animation where balloons would rise up and have random positions and colors. To do this, I first created an array. This array would then hold each individual balloon with their random position and color attached. To create the balloons that would be pushed into the array, I used a for loop. The loop looked like this: </p>
+  <p>
+    <pre style="background-color: white; width: 900px; margin: auto; box-shadow: -5px 5px 10px #00cbfc;"><code>
+  for (var b = 0; b < 500; b++) { 
+  balloons.push(new Balloon(random(0, 1000), random(height, 100000), random(255), random(255), random(255)));
+  }
+    </code></pre>
+  </p>
+  <p> This loop will run until 499 balloons are created, and each balloon created has its position and rgb value randomly chosen. Each balloon created is automatically pushed into the array, where it is stored for usage later. The balloons y-position starts under the screen, as it is randomly assigned a y-value between the range of the bottom of the canvas to the y position of 100,000; this creates the effect of the balloons rising from out of the canvas. </p>
+  <p> To create the animation of the balloons rising up, I first made a draw function so that the animation moved. First, I added background(); so that the past frame would be cleared. Next, I had to draw all of the balloons. So I used a for loop to draw the
+    balloons. The code looked like this: </p>
+  <p>
+    <pre class="code"><code>
+  for (var i = 0; i < balloons.length; i++) { 
+    balloons[i].draw();
+  }
+  </code></pre>
+  </p>
+  <p> This loop runs until all of the balloons are created; the amount of balloons stored in the balloons array determined this number. After, the balloons had to animated to rise up. Since I also wanted the speed of the balloon's rise to be changed by the position of the mouse, I used a if/if else statement. The statement looked like this: </p>
+  <p>
+  <pre class="code"><code>
+  if (mouseY < 150) { 
+    balloons[i].ypos -= 10;
+  }
+  else if (mouseY > 350) {
+    balloons[i].ypos -= 2.5;
+  }
+  else {
+    balloons[i].ypos -= 5;
+  }
+  </code></pre>
+  </p>
+  <p> This statement works by using the y position of the mouse - defined as mouseY.
+    <br> If the mouse position is less than 150, which is roughly the top third of the canvas, than the balloons will rise at the quickest speed.
+    <br> If the mouse position is less than 350, which is roughly the bottom third of the canvas, than the balloons will rise at the slowest speed.
+    <br> And if the mouse is not in these two ranges, which is roughly the middle third of the canvas, than the balloons will rise at the middle speed.
+    <br> The balloons rise because in each option, their y position is decreased by a different value: the higher the value, the quicker the speed.
+  </p>
+  <div style="display: flex; flex-wrap: wrap;">
+  <img src="https://docs.google.com/drawings/d/e/2PACX-1vRgk1mJ_lo4YQ-48Y9wNt16u1USzz8nm8_Q5FHt2B84QmEGnyY9lNPAxXR7d5uNbaMLb4wPnF-zQh9-/pub?w=400&h=400"></img>
+  <img src="https://lh4.googleusercontent.com/jx-h5XFdG-EMTyzTDfDe9q6Jh865mdNtpSUh2F0vg1-iyx3dnz9rBSgjn2vaoCXjt_JEHHe50zJIx6dE8oqQa3quVP6rQirPc3XV2E-BBjEZDH3P2aIhWjjqMQpVFaC8CjKSKoU3Lf-lKQ"></img>
+  </div>
+
+  <h2> Clouds: </h2>
+  <p> To create the clouds, I first made 3 different clouds. They were made using a bunch of ellipses. Each cloud type had a name assigned: there was cloud1, cloud2, and cloud3. After the clouds were created into functions with parameters for x and y, they could be animated. </p>
+  <img src="https://docs.google.com/drawings/d/e/2PACX-1vQkMJsWU1flkQrkgl9neur9Z9_jw0tjZsviUraK7MTchQZ3213MosMKw-Zc17tJfr6sr1_CMYdws_Zr/pub?w=400&h=400"></img>
+
+  <h3> Animating the Clouds: </h3>
+  <p> The clouds were animated inside the draw function. Each cloud was animated in the same way. The code animating for one of the clouds looked like this: </p>
+  <p>
+  <pre class="code"><code>
+  cloud1(cloud1x, 100);
+  if (cloud1x < width) {
+    cloud1x += 10;
+  }
+  else if (cloud1x >= width) {
+    cloud1x = 0;
+  }
+  </code></pre>
+  </p>
+  <p> The first line of code calls for a cloud (in this case, cloud1) and defines the x as cloud1x and the y as 100. For each cloud, the x was defined as the variable cloud(#)x. Each cloud had a different number, so that each cloud could move at different speeds. For the y values, a height for the cloud was given; each cloud had a different height. After the cloud was created, an if/else if statement was used to make sure that the cloud reset after it hit the edge of the canvas. The cloud would only move if cloud(#)x was less than the width of the canvas, and if cloud(#)x was greater than or equal to the width, than its value would return to 0, which resets the animation. </p>
+  <img src="https://lh6.googleusercontent.com/Nrkmjcm8TZmunX2UfqiSZRG7wTjFcvD1L1mHUgvR2R5eTaaSMdsv4JE7yzmCsGTYcFPrMEuKzjS_P3eA9RvpQh31dl76awIw2tK9zFyE4CgXrFDFGrvwF1YgvHBRHYpl09rGopDpp-dGCQ"></img>
+
+  <h2> Party Mode! </h2>
+  <p> Party mode is where the animations move faster, the clouds and background have flashing colors, and where the text Party! appears. This mode is activated when the mouse is clicked. </p>
+  <p> The first part of creating this mode is using the mouseClicked function to cause the mode to start only when the mouse is clicked. After that, another draw function is put underneath the function to create the animations. The function is very similar to the normal one, only with a few changes. </p>
+  <h3> Faster Animations: </h3>
+  <p> To create faster animations, any animations in the copied draw function had their rate increased. For example, the speed of the balloons when the mouse is in the middle third is 5px normally, but in party mode the speed is 50px. </p>
+    <h3> Text: </h3>
+  <p> To create the text Party!, I drew out the letters and then made them into a function. This allowed me to put the text anywhere I wanted. </p>
+  <img id="party!" src="https://docs.google.com/drawings/d/e/2PACX-1vQUO9oyEvGEIRlTJFv0H4SWvweWO8YItRo-3F4695GynZHvLbjRfUP2d8ca23YNBaSUHHZ8cfwWOu3c/pub?w=959&h=309"></img>
+  <h3> Flashing Colors:</h3>
+  <p> To create the flashing colors, I first had to create variables for the rgb values of the clouds, the background, and the text. After the variables were created, I could use the random function to change the value of the variables, which would make the rgb values of the clouds, background, and the text different every time. </p>
+  <div style="display: flex; flex-wrap: wrap;">
+  <img src="https://lh5.googleusercontent.com/x00_jUGEVIyUYROzr1J_12-rBlNob0kWcJqecJa_Mh9VAB-Tb93_9txFjrOGfz-VPlW0-U2JF-_8t4AlS7epBK-_PUfWeG9UVKfTfIV-H2OlN6JGBDDXM_e0fxU50lo3q2wiS2PLP-LH2Q"></img>
+  <img src="https://lh4.googleusercontent.com/q5fOJumpTcJDbFWIO77hakOGWsp9fOBJQ_4ySPh38h3Km2EAbUEzafQAZZsvmWLHbIBzZ3pmQTV244sfL4x1T5QSj5V07KbIX2mKLcd_hXpysBOjC6vV1lBtyP7DkKKiKuJNnlwRQibbww"></img>
+  </div>
+  <div style="background-color: white; box-shadow: 0px 0px 10px #00cbfc;">
+  <h2 style="margin-top: 100px; color: rgb(167, 238, 255); text-shadow: 0px 0px 0px white;"> Reflection: </h2>
+  <p> While doing this project, I experimented with a lot of ways to make what I wanted happen. These experiments did not always turn out well or even work at all. </p>
+  <p> One of these missteps was when creating the looping animation for the clouds. The first time, I made the animation reset only when the x position was <b> equal </b> to the width of the canvas. This was a mistake because the animation would only reset if the x position was equal to the width of the canvas. That meant that the clouds could only travel at speeds that were factors of the width (which was 1000px). I fixed this issue by making the animation restart when the x position of a cloud was <b> equal to or greater than </b> the width of the canvas. This allowed the clouds to move at any speed. </p>
+  <p> Another misstep I made was when creating party mode. When I first created party mode, I just used the fill function with the 3 rgb values containing a random function in them to color in the clouds. This did not work however, because then the outlines of the clouds' ellipses were visible; they were still white. That meant that I had to create variables that would randomize a r,g, and b value that I could apply both the the fill and stroke functions, which would color both the cloud and its outlines. </p>
+  <p style="font-weight: bold; font-family: Roboto Slab; text-align: center; font-size: 30px; margin-top: 20px; padding-bottom: 10px;"> Overall, after some experimentation and building upon the results, I was able to create my art. </p>
+  </div>
+</body>
+
+</html>

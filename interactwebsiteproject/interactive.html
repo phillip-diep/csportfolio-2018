@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grill Guide</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid Serif">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+    <style type="text/css">
+        body {
+            background: black;
+            color: white;
+            cursor: default;
+
+        }
+
+        h1 {
+            font-family: "Oswald";
+            font-weight: bolder;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        h2 {
+            font-family: "Droid Serif";
+            font-weight: 400;
+            font-style: italic;
+            font-size: 5vw;
+            line-height: 23px;
+            text-transform: capitalize;
+            margin: 4vw 0 0 0;
+        }
+
+        @media screen and (min-width: 1200px) {
+            #h2 {
+                font-size: 3em;
+                margin-top: 0.8em;
+            }
+        }
+
+        h3 {
+            font-family: "Oswald";
+            font-weight: 100;
+            font-size: 8vw;
+            line-height: 10vw;
+            margin: 0 0 0 2vw;
+        }
+
+        h4 {
+            font-family: "Droid Serif";
+            font-weight: 400;
+            font-style: italic;
+            font-size: 7vw;
+            line-height: 7vw;
+            text-transform: capitalize;
+            margin: 7vw 0 0 0;
+        }
+
+        p {
+            font-family: "Droid Serif";
+            font-weight: bold;
+            font-style: italic;
+            font-size: 3vw;
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+            transition: opacity 0.5s;
+        }
+
+        @media screen and (min-aspect-ratio: 16/9) {
+            video {
+                height: 300%;
+                top: -100%;
+            }
+        }
+
+        @media screen and (max-aspect-ratio: 16/9) {
+            video {
+                width: 300%;
+                left: -100%;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            video {
+                width: 400%;
+                left: -150%;
+            }
+        }
+
+        input {
+            font-family: "Open Sans";
+            font-weight: bolder;
+            font-size: 10vw;
+            text-align: center;
+            width: 30vw;
+            color: white;
+            border: none;
+            background: rgba(50, 50, 50, 0.8);
+            border-radius: 10px;
+            transition: background 0.3s;
+        }
+
+        input:hover {
+            background: rgb(50, 50, 50);
+        }
+
+        input:focus {
+            background: rgb(50, 50, 50);
+        }
+
+        select {
+            font-family: "Open Sans";
+            font-weight: bolder;
+            font-size: 10vw;
+            text-align: center;
+            color: white;
+            border: none;
+            background: rgba(50, 50, 50, 0.8);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        select:hover {
+            background: rgb(50, 50, 50);
+        }
+
+        option {
+            font-size: 3vw;
+            font-weight: bolder;
+            background: black;
+        }
+
+        a {
+            font-family: "Open Sans";
+            font-size: 6vw;
+            line-height: 20vw;
+            font-weight: 900;
+            text-decoration: none;
+            color: white;
+            padding: 3vw 30.8vw;
+            background: rgba(50, 50, 50, 0.8);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+    
+    a:hover {
+            background: rgb(50, 50, 50);
+        }
+    
+        .about {
+            font-family: "Open Sans";
+            font-weight: 900;
+            font-size: 4vw;
+            width: 5vw;
+            height: 5vw;
+            color: black;
+            border: none;
+            background: rgba(300, 300, 300, 0.8);
+            border-radius: 100%;
+            cursor: pointer;
+        }
+
+        .explain {
+            display: none;
+            position: absolute;
+            background: black;
+            padding: 2vw;
+            width: 30vw;
+            cursor: help;
+        }
+
+        #background {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -100;
+        }
+
+        #opening {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: opacity 0.5s;
+        }
+
+        #title {
+            font-size: 20vw;
+            line-height: 36vw;
+        }
+
+        @media screen and (min-width: 600px) {
+            #title {
+                font-size: 6em;
+                line-height: 215px;
+            }
+        }
+
+        #start {
+            font-family: "Open Sans";
+            font-weight: 900;
+            font-size: 5vw;
+            width: 90%;
+            height: 10vw;
+            margin-top: 5vw;
+            color: white;
+            border: none;
+            background: rgba(50, 50, 50, 0.8);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        #start:hover {
+            background: rgb(50, 50, 50);
+        }
+
+        @media screen and (min-width: 1000px) {
+            #start {
+                font-size: 50px;
+                margin-top: 1em;
+                height: 2em;
+            }
+        }
+
+        #error {
+            display: none;
+            background-color: #f44336;
+            font-family: "Open Sans";
+            font-size: 7vw;
+            padding-left: 4vw;
+            padding-top: 4vw;
+            position: fixed;
+            height: 33vw;
+            top: -37vw;
+            right: 0;
+            transition: top 0.5s;
+        }
+
+        #exitAlert {
+            color: #f44336;
+            background: white;
+            border: none;
+            border-radius: 50%;
+            height: 20vw;
+            width: 20vw;
+            float: right;
+            font-size: 20vw;
+            font-weight: bolder;
+            line-height: 1;
+            margin-right: 5vw;
+            margin-left: 5vw;
+            margin-top: 2vw;
+            cursor: pointer;
+        }
+
+        #input {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        #cook {
+            font-family: "Open Sans";
+            font-weight: 900;
+            font-size: 5vw;
+            width: 70%;
+            height: 10vw;
+            margin-top: 3vw;
+            color: white;
+            border: none;
+            background: rgba(50, 50, 50, 0.8);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        #cook:hover {
+            background: rgb(50, 50, 50);
+        }
+
+        #loading {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        #output {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="background">
+        <video muted id="video" src="https://preview.c9users.io/fillipdiep/csportfolio/interactwebsiteproject/FoodPack1_06_Videvo%20(convert-video-online.com).mp4?_c9_id=livepreview2&_c9_host=https://ide.c9.io" id="video"> </video>
+    </div>
+
+    <div id="opening">
+        <div id="title">
+            <h1> Grill </h1>
+            <h1> Guide </h1>
+        </div>
+        <h2 id="h2"> A guide to grilling the perfect steak</h2>
+        <button id="start"> Begin </button>
+    </div>
+
+    <div id="error">
+        <button id="exitAlert">&times</button>
+        <span style="font-weight: bolder">ERROR: </span> that piece of meat is too big! How can you eat it?
+    </div>
+
+    <div id="input">
+        <div style="display: flex; align-items: center; justify-items: center;">
+            <button class="about" id="thicknessAbout"> ? </button>
+            <p class="explain" id="thicknessExplain"> How thick is the meat? (use decimals)</p>
+            <h3 style="width: 35vw"> Meat Thickness: </h3>
+            <input type="text" maxlength="4" placeholder="1.5" id="thickness" />
+            <h3 style="padding-right: 2vw;"> inches </h3>
+        </div>
+        <div style="display: flex; align-items: center; justify-items: center">
+            <button class="about" id="cookingAbout"> ? </button>
+            <p class="explain" id="cookingExplain"> How would you like the meat cooked? </p>
+            <h3 style="width: 35vw"> Cooking: </h3>
+            <select style="margin-right: 2vw; width: 51vw" id="cooking">
+            <option> Rare </option>
+            <option> Med. Rare </option>
+            <option> Medium </option>
+            <option> Well Done </option>
+            </select>
+        </div>
+        <button id="cook"> Cook! </button>
+    </div>
+
+    <div id="loading">
+        <h1 style="font-size: 15vw"> Cooking... </h1>
+    </div>
+
+    <div id="output">
+        <div style="display:flex; transition: opacity 0.5s;">
+            <div style="width: 50%; text-align: center;">
+                <h3 style="font-size: 15vw; text-justify: center; padding-top: 5vw"> Side 1: </h3>
+                <div id="side1"> </div>
+            </div>
+            <div style="width: 50%; text-align: center;">
+                <h3 style="font-size: 15vw; text-justify: center; padding-top: 5vw"> Side 2: </h3>
+                <div id="side2"> </div>
+            </div>
+        </div>
+        <a href="https://www.youtube.com/"> How To Page </a>
+    </div>
+    <script type="text/javascript" src="interactive.js"></script>
+</body>
+
+</html>

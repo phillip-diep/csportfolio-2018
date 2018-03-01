@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>aboutmehowto</title>
+    <link rel="stylesheet" href="index.css" type="text/css" />
+    <link rel="stylesheet" href="navbar.css" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Just Another Hand">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Biryani">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <style>
+        h3{
+            font-family: "Work Sans";
+            letter-spacing: 5px;
+            font-weight: 900;
+        }
+        body{
+            font-family: "Biryani";
+            background-image: url("https://docs.google.com/drawings/d/e/2PACX-1vQceQf-JWWwW49TqpC5z4-MBmJc-u6AHhaO-KrCFjon8W-FsJYE1193ePsRixgtR62weBFMFErYyJd8/pub?w=944&h=631");
+
+            
+        }
+        h2{
+            font-family:"Oswald";
+            font-weight: 100;
+            letter-spacing: 5px;
+    
+        }
+        h1{
+            font-family:"Raleway";
+            font-weight:900;
+            letter-spacing: 10px;
+        }
+        .moveex{
+            animation:mymove 30s infinite;
+        }
+        @keyframes mymove{
+        50% {margin: 0px 100px 0px 100px;}
+        }
+        #navbar li:hover {
+            animation:mycolor 666ms 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes mycolor{
+                    to {background-color: #2A72A7;}
+                }
+        a:link {
+        color: white; 
+        text-decoration: none;
+        font-family:"Raleway";
+        font-weight:900;
+        letter-spacing: 10px;        
+        }
+        a:visited {
+        color: white;
+        text-decoration: none;
+        font-family:"Raleway";
+        font-weight:900;
+        letter-spacing: 10px;        
+        }
+    </style>
+</head>
+<body>
+    <ul id="navbar">
+        <li style="border-right: 3px solid white"><a href="index.html"> About Me </a></li>
+        <li style="border-left: 3px solid white"><a href="aboutmehowto.html"> How To - About Me </a></li>
+    </ul>
+    <h1> How to - About Me </h1>
+    <h2> Linking a CSS page: </h2>
+        <p> In order to stylize my HTML page, I had to first link a CSS page to it. I had to use the &ltlink> tag to link the css code.
+    <br> The code would look like this: <span style="font-size:20px; background-color:rgba(0,0,0,.5);"> &lt link rel="stylesheet" href="index.css" type="text/css" /> </span> 
+    </br> As you can see, the link tag is used: Href is used to give the link of the CSS sheet.</p>
+    <h2> Background: </h2>
+        <p> To make the background, I first went to my CSS code. Using "body" I made the background. First, I have to link the image I wanted to use using "background-image." In this command, I used url() to link the url of the image that I wanted. 
+        </p>
+        <div class="imgbox2">
+            <div class="imges2">
+            <img src="https://docs.google.com/drawings/d/e/2PACX-1vSiHx--nIdRzhfENfPAWGCFMVtShULkvomM7-2XLlNvEQ7G5q3xrD0nULnxJU8QrcBy_rESbem_AMAL/pub?w=1416&h=947" style="width:auto; height: 300px;"> </img>
+            <div class="imgtxt2">
+                This is the image I wanted to use.
+            </div>
+        </div>
+            <div class="txtbox">
+                <p id="para1"> I then had to make sure that the image covered the whole webpage. I used "background-size:cover" to do this. I also had to make sure that the image would stay in place as the user scrolled down. I used "background-attachment:fixed" to do this. In the end, the code looked like this: 
+                <span class="code"> 
+                    body{
+                    </br> background-image: url("https://docs.google.com/drawings/d/e/2PACX-1vSiHx--nIdRzhfENfPAWGCFMVtShULkvomM7-2XLlNvEQ7G5q3xrD0nULnxJU8QrcBy_rESbem_AMAL/pub?w=1416&h=947");
+                    <br> background-size: cover;
+                    </br> background-attachment: fixed; }
+                </span>
+            </div>
+        </div>
+        
+    <h2> Navbar: </h2>
+        <p style="color:white">
+            To create the navigation bar, I first made a list of links to each page. The code looked like this:
+            <span class="code"> 
+            &ltul id="navbar">
+            <br> &ltli> &lta href="index.html"> About Me /> &lt/li>
+            </br> &ltli> &lta href="aboutmehowto.html"> How To - About Me /> &lt/li>
+            <br> &lt/ul>
+            </span>
+            The navigation bar looked like this:
+            <ul style="color:white">
+            <li><a href="index.html"> About Me </a></li>
+            <li><a href="aboutmehowto.html"> How To - About Me </a></li>
+            </ul>
+            <span style="color:white">
+            I then had to use CSS to decorate the element. My CSS file looked like this:
+            <span class="code">
+            #navbar{ <br>
+                margin: 0px; </br>
+                background-color: black; <br>
+            } </br>
+            (this changed the background of the navigation bar.) <br>
+            #navbar li { </br>
+                margin: 0px; <br>
+                display:inline-block; </br>
+                background-color: black; <br>
+                padding: 10px; </br>
+                width: auto; <br>
+                height: auto; </br>
+            } <br>
+            (this changed how the links interacted with each other)
+            </span> </br>
+            The navigation bar now looked like this:
+                <ul id="navbar">
+                    <li><a href="index.html"> About Me </a></li>
+                    <li><a href="aboutmehowto.html"> How To - About Me </a></li>
+                </ul>
+        </span>
+        </p>
+    <h2> Headers: </h2>
+        <p style="color:white;">
+            For my headers, I used &lth1> to &lth4>.<br> 
+            For the largest header, &lth1>, I used it to put the titles of my pages. 
+        </p>
+            <h1> This is my &lth1> header. </h1>
+        <p style="color:white;">
+            For the second largest header, &lth2>, I used it for my section titles. </p>
+            <h2> This is my &lth2> header. </h2>
+        <p style="color:white;">
+            For the third largest header, &lth3>, I used it for my sub section titles in the "What I have Learned" section. </p>
+            <h3> This is my &lth3> header. </h3>
+        <p style="color:white;">
+            For the fourth smallest header, &lth4>, I used it for the "I have learned how to:" text in the "Programming" section of the "What I have Learned" section. </p>
+            <h4> This is my &lth4> header. </h4>
+    <h2> Paragraphs: </h2>
+        <p>
+            Any text that I had was a paragraph. I used the &ltp> tag to do this. The code for any text would look like this:
+            <span class="code"> &ltp> Text &lt/p> </span>
+        </p>
+    <h2> Images: </h2>
+        <p>
+            In my webpage, I used 2 images. I put in the images using the &ltimg> tag. In the &ltimg> tag, I used ”src” and “style”. The code for one of the pictures looks like this:<br> 
+            <span class="imgbox">
+                <span id="imagetxt"> &ltimg src=”http://www.himalayanacademy.com/blog/wp-content/uploads/2014/05/satsang-for-taka/01-001sanjosecalifornia.jpg” style=”width:500px”/>
+                </span>
+                <span class="imges">
+                        <img src="http://www.himalayanacademy.com/blog/wp-content/uploads/2014/05/satsang-for-taka/01-001sanjosecalifornia.jpg" style="width:500px; color:black;"/>
+                    <span class=imgtxt>
+                        <span style="color:black; font-size:30px;"> This is the result </span>
+                    </span>
+                </span>
+            </span>
+                
+        </p>
+    <h2> Lists: </h2>
+        <p>
+            In my webpage, there is a list. Since this list is a bullet pointed list, I used the &ltul> tag. I also used “style” in the tag in order to change the font size and the font color. For the solid bullet pointed items, I used the &ltli> tag to put down each point. The code looked like this: <br>
+                <span class="code">
+                    &ltul style=”font-size: 25px; color: white;”> </br>
+                    &ltli> Make some basic websites &lt/li> <br>
+                    &ltli> Some examples of this are: &lt/li> </br>
+                    … &lt/ul> <br> 
+                </span>
+                This code created this list:
+                <ul style="color:white; font-size:25px;"> 
+                <li> Make some basic websites </li> 
+                <li> Some examples of this are: </li> 
+                </ul>
+                <span style="color:white">
+                There is also a another list, that is nested inside the first list. In order to do this, I just used the &ltul> tag and the &ltli> tag to make another list inside the first one. To make the bullet points different, I used “list-style-type:circle” inside “style”. The code looked like this: <br> <span class="code">
+                    &ltul style=”font-size: 25px; color: white;”> </br>
+                    &ltli> Make some basic websites &lt/li> <br>
+                    &ltli> Some examples of this are: &lt/li> </br>
+                    &ltul style=”font-size:20px; font-style-type:circle;”> <br>
+                    &ltli> How to make paragraphs &lt/li> </br>
+                    &ltli> How to make headers and titles &lt/li> <br> 
+                    &ltli> How to make lists and tables &lt/li> </br>
+                    &lt/ul> <br>
+                    … &lt/ul>
+                    </span>
+                This code created this list:
+                <ul style="color:white; font-size:25px;"> 
+                <li> Make some basic websites </li> 
+                <li> Some examples of this are: </li> 
+                <ul style="font-size:20px; font-style-type:circle;"> 
+                <li> How to make paragraphs </li> 
+                <li> How to make headers and titles </li> 
+                <li> How to make lists and tables </li> 
+                </ul> 
+                </ul>
+                </span>
+        </p>
+    <h2> Columns of Text: </h2>
+        <p>
+            In my webpage, for the “What have I learned” section, there are 2 columns of text. Was able to do this by using flex blocks. I first put each column into it’s own block. I did this by using the &ltdiv> tag and “class”. I then took that class, and put it in my CSS file: I edited the height and width of the columns here. The file looked like this: <br> <span class="code">
+                .wihlitem{ </br>
+                width: 50%; <br>
+                Height: auto; </br> </span>
+                Next, I made a &ltdiv> + class tag that contained the two column &ltdiv>s. In the CSS file, I used “display” and set it to “flex” so that the two columns were now in 1 flex block. The file looked like this: <br> <span class="code">
+                .wihl{ </br>
+                Display: flex; <br>
+                …} </span>
+
+        </p>
+    <h2> Animations: </h2>
+        <p> To make the pictures move, I used an animation. I first made the animation using @keyframes. I set the animation to make the margin bigger on the left and right sides, which would made the pictures move away from each other. The animation looked like this: 
+            <br> <span class="class"> 
+                @keyframes mymove{<br>50% {margin: 0px 100px 0px 100px;} }
+            </span>
+            <br> After this, I then used "animation" inside the .imges class (the class that contained the whole image block) to play the animation for 30 seconds infinitely. It looked like this:
+            <span class="code"> 
+                .imges{
+                <br>animation:mymove 30s infinite; }
+            </span>
+        </p>
+        <div class="imgbox">
+            <div class="moveex">
+                <img src="https://docs.google.com/drawings/d/e/2PACX-1vTpQj-u_8aJT4BAuE7TxWT7B6BsBq7wqvq0TZvIPkp1WjXxt8tNLcitiWBpBqz5J8cavxOqh_A1xJ7h/pub?w=1440&h=1080" style="width:500px;"/>
+                <div class="imgtxt"> 
+                    Text
+                </div>
+            </div>
+            <div class="moveex">
+                <img src="https://docs.google.com/drawings/d/e/2PACX-1vTpQj-u_8aJT4BAuE7TxWT7B6BsBq7wqvq0TZvIPkp1WjXxt8tNLcitiWBpBqz5J8cavxOqh_A1xJ7h/pub?w=1440&h=1080" style="width:500px;"/>
+                <div class="imgtxt"> 
+                    Text
+                </div>
+            </div>
+        </div>
+    <h2 style="margin-top:50px"> Custom Fonts: </h2>
+    <p>
+        In my webpage, I used fonts that I got from https://fonts.google.com/. I linked the url to the font in the &lthead> tag. The url i used was “https://font.googleapis.com/css?family=FONT NAME.” I then was able to change the fonts of the text I had in the style section, and all I had to do was use font-family as usual. <br>
+        EX) <a href="https://font.googleapis.com/css?family=Oswald">https://font.googleapis.com/css?family=Oswald </a> = <span style="font-family: Oswald; font-size:150px;"> Oswald </span>
+
+    </p>
+</body>
+</html>
