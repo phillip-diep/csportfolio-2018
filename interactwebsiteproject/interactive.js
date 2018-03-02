@@ -77,106 +77,131 @@ cook.addEventListener("click", function() {
 
     if (meatSize > 200) {
         error.style.top = "0";
-    } else {
+    }
+    else {
         error.style.display = "none";
         input.style.opacity = "0";
         loading.style.display = "flex";
         video.play();
         setTimeout(inputDelete, 500);
         setTimeout(loadingFadeIn, 510);
-        setTimeout(outputTransition, 10000);
-        setTimeout(loadingDelete, 10500);
-        setTimeout(outputFadeIn, 10510);
+        setTimeout(outputTransition, 5000);
+        setTimeout(loadingDelete, 5500);
+        setTimeout(outputFadeIn, 5510);
     }
 
-    if (cooking.value === "Rare" && meatSize <= 50){
+    if (cooking.value === "Rare" && meatSize <= 50) {
         side1.innerHTML = "<h4> 2 minutes </h4>";
         side2.innerHTML = "<h4> 2 minutes </h4>";
-    } else if (meatSize <= 75){
+    }
+    else if (cooking.value === "Rare" && meatSize <= 75) {
         side1.innerHTML = "<h4> 4 minutes </h4>";
         side2.innerHTML = "<h4> 2 minutes </h4>";
-    } else if (meatSize <= 100){
+    }
+    else if (cooking.value === "Rare" && meatSize <= 100) {
         side1.innerHTML = "<h4> 5 minutes </h4>";
         side2.innerHTML = "<h4> 3 minutes </h4>";
-    } else if (meatSize <= 125){
+    }
+    else if (cooking.value === "Rare" && meatSize <= 125) {
         side1.innerHTML = "<h4> 5 minutes </h4>";
         side2.innerHTML = "<h4> 4 minutes </h4>";
-    } else if (meatSize <= 150){
+    }
+    else if (cooking.value === "Rare" && meatSize <= 150) {
         side1.innerHTML = "<h4> 6 minutes </h4>";
         side2.innerHTML = "<h4> 4 minutes </h4>";
-    } else if (meatSize <= 175){
+    }
+    else if (cooking.value === "Rare" && meatSize <= 175) {
         side1.innerHTML = "<h4> 7 minutes </h4>";
         side2.innerHTML = "<h4> 5 minutes </h4>";
-    } else if (meatSize <= 200){
+    }
+    else if (cooking.value === "Rare" && meatSize <= 200) {
         side1.innerHTML = "<h4> 8 minutes </h4>";
         side2.innerHTML = "<h4> 6 minutes </h4>";
     }
-    
-    if (cooking.value === "Med. Rare" && meatSize <= 50){
+
+    if (cooking.value === "Med. Rare" && meatSize <= 50) {
         side1.innerHTML = "<h4> 3 minutes </h4>";
         side2.innerHTML = "<h4> 2 minutes </h4>";
-    } else if (meatSize <= 75){
+    }
+    else if (cooking.value === "Med. Rare" && meatSize <= 75) {
         side1.innerHTML = "<h4> 4 minutes </h4>";
         side2.innerHTML = "<h4> 3 minutes </h4>";
-    } else if (meatSize <= 100){
+    }
+    else if (cooking.value === "Med. Rare" && meatSize <= 100) {
         side1.innerHTML = "<h4> 5 minutes </h4>";
         side2.innerHTML = "<h4> 4 minutes </h4>";
-    } else if (meatSize <= 125){
+    }
+    else if (cooking.value === "Med. Rare" && meatSize <= 125) {
         side1.innerHTML = "<h4> 6 minutes </h4>";
         side2.innerHTML = "<h4> 5 minutes </h4>";
-    } else if (meatSize <= 150){
+    }
+    else if (cooking.value === "Med. Rare" && meatSize <= 150) {
         side1.innerHTML = "<h4> 7 minutes </h4>";
         side2.innerHTML = "<h4> 5 minutes </h4>";
-    } else if (meatSize <= 175){
+    }
+    else if (cooking.value === "Med. Rare" && meatSize <= 175) {
         side1.innerHTML = "<h4> 8 minutes </h4>";
         side2.innerHTML = "<h4> 6 minutes </h4>";
-    } else if (meatSize <= 200){
+    }
+    else if (cooking.value === "Med. Rare" && meatSize <= 200) {
         side1.innerHTML = "<h4> 9 minutes </h4>";
         side2.innerHTML = "<h4> 8 minutes </h4>";
     }
-    
-    if (cooking.value === "Medium" && meatSize <= 50){
+
+    if (cooking.value === "Medium" && meatSize <= 50) {
         side1.innerHTML = "<h4> 4 minutes </h4>";
         side2.innerHTML = "<h4> 2 minutes </h4>";
-    } else if (meatSize <= 75){
+    }
+    else if (cooking.value === "Medium" && meatSize <= 75) {
         side1.innerHTML = "<h4> 5 minutes </h4>";
         side2.innerHTML = "<h4> 3 minutes </h4>";
-    } else if (meatSize <= 100){
+    }
+    else if (cooking.value === "Medium" && meatSize <= 100) {
         side1.innerHTML = "<h4> 6 minutes </h4>";
         side2.innerHTML = "<h4> 4 minutes </h4>";
-    } else if (meatSize <= 125){
+    }
+    else if (cooking.value === "Medium" && meatSize <= 125) {
         side1.innerHTML = "<h4> 7 minutes </h4>";
         side2.innerHTML = "<h4> 5 minutes </h4>";
-    } else if (meatSize <= 150){
+    }
+    else if (cooking.value === "Medium" && meatSize <= 150) {
         side1.innerHTML = "<h4> 7 minutes </h4>";
         side2.innerHTML = "<h4> 6 minutes </h4>";
-    } else if (meatSize <= 175){
+    }
+    else if (cooking.value === "Medium" && meatSize <= 175) {
         side1.innerHTML = "<h4> 8 minutes </h4>";
         side2.innerHTML = "<h4> 7 minutes </h4>";
-    } else if (meatSize <= 200){
+    }
+    else if (cooking.value === "Medium" && meatSize <= 200) {
         side1.innerHTML = "<h4> 10 minutes </h4>";
         side2.innerHTML = "<h4> 8 minutes </h4>";
     }
-    
-    if (cooking.value === "Well Done" && meatSize <= 50){
+
+    if (cooking.value === "Well Done" && meatSize <= 50) {
         side1.innerHTML = "<h4> 5 minutes </h4>";
         side2.innerHTML = "<h4> 3 minutes </h4>";
-    } else if (meatSize <= 75){
+    }
+    else if (cooking.value === "Well Done" && meatSize <= 75) {
         side1.innerHTML = "<h4> 7 minutes </h4>";
         side2.innerHTML = "<h4> 5 minutes </h4>";
-    } else if (meatSize <= 100){
+    }
+    else if (cooking.value === "Well Done" && meatSize <= 100) {
         side1.innerHTML = "<h4> 8 minutes </h4>";
         side2.innerHTML = "<h4> 6 minutes </h4>";
-    } else if (meatSize <= 125){
+    }
+    else if (cooking.value === "Well Done" && meatSize <= 125) {
         side1.innerHTML = "<h4> 9 minutes </h4>";
         side2.innerHTML = "<h4> 7 minutes </h4>";
-    } else if (meatSize <= 150){
+    }
+    else if (cooking.value === "Well Done" && meatSize <= 150) {
         side1.innerHTML = "<h4> 10 minutes </h4>";
         side2.innerHTML = "<h4> 8 minutes </h4>";
-    } else if (meatSize <= 175){
+    }
+    else if (cooking.value === "Well Done" && meatSize <= 175) {
         side1.innerHTML = "<h4> 11 minutes </h4>";
         side2.innerHTML = "<h4> 9 minutes </h4>";
-    } else if (meatSize <= 200){
+    }
+    else if (cooking.value === "Well Done" && meatSize <= 200) {
         side1.innerHTML = "<h4> 13 minutes </h4>";
         side2.innerHTML = "<h4> 11 minutes </h4>";
     }
